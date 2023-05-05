@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/main.css"></link>
+		
+		<script src="libs/gsap/gsap.min.js" defer></script>
+		<script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+		<script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+
+		<script src="js/app.js" defer></script>
+
+
+</head>
+<body>
+
+	<div class="wrapper">
+		<div class="content">
+
+			<header class="main-header">
+				<div class="layers">
+					<div class="layer__header">
+						<div class="layers__caption">Be ready to got an answers</div>
+						<div class="layers__title">ATMOS</div>
+					</div>
+					<div class="layer layers__base" style="background-image: url(img/layer-base.png)";></div>
+					<div class="layer layers__middle" style="background-image: url(img/layer-middle.png);"></div>
+					<div class="layer layers__front" style="background-image: url(img/layer-front.png);"></div>
+				</div>
+			</header>
+		
+			<article class="main-article" style="background-image: url(img/dungeon.jpg);">
+				<div class="main-article__content">
+					<h2 class="main-article__header">Please enjoy</h2>
+				</div>
+				
+				<h2 class="title"></h2>
+				<div class="container">
+					<div id="video_player">
+							<video controls id="main-Video" src=""></video>
+					</div>
+					<div class="playlistBx">
+							<div class="header">
+									<div class="row">
+											<span class="AllLessons"></span>
+									</div>
+									<input type="text" name="" id="searchInput" placeholder="Type Something ...."> 
+							</div>
+							<ul class="playlist" id="playlist">
+							</ul>
+					</div>
+			</div>
+							
+							<script src="/js/video-list.js"></script>
+							<script src="/js/script.js"></script>
+							<script>
+								const searchInput = document.getElementById("searchInput");  
+								searchInput.addEventListener("input", function() {
+									const searchValue = searchInput.value.toLowerCase();
+									for (const li of playlist.children) {
+										const span = li.querySelector("span");
+										const spanText = span.textContent;
+										const spanTextLower = spanText.toLowerCase();
+										const startIndex = spanTextLower.indexOf(searchValue);
+										if (startIndex === -1) {
+											li.style.display = "none";
+										} else {
+											li.style.display = "";
+											span.innerHTML =
+												spanText.slice(0, startIndex) +
+												"<mark>" +
+												spanText.slice(startIndex, startIndex + searchValue.length) +
+												"</mark>" +
+												spanText.slice(startIndex + searchValue.length);
+										}
+									}
+								});
+						</script>
+						
+						
+						<div class="copy">© Atmos WebDesign</div>
+					</article>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
