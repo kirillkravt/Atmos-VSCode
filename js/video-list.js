@@ -53,5 +53,10 @@ let allVideos = [
 		 name: "lava lamp",
 		 src: "./media/-27803",
 		 id: "vid_11"
-	}
+	},
+	{
+		name: "Binaural",
+		src: "./media/Binaural Beats F",
+		id: "vid_12"
+ }
 ]
